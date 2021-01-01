@@ -34,17 +34,6 @@ namespace WebAPI
         {
 
             services.AddControllers();
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
-            //    c.AddSecurityDefinition("Bearer", new ApiKeyScheme
-            //    {
-            //        Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
-            //        In = "header",
-            //        Name = "Authorization",
-            //        Type = "apiKey"
-            //    });
-            //});
             services.AddSwaggerGen(c =>
             {
                 //This is to generate the Default UI of Swagger Documentation 
@@ -52,7 +41,7 @@ namespace WebAPI
                 // To Enable authorization using Swagger (JWT) 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,
